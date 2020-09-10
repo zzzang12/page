@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.9/brython_stdlib.min.js"></script>
+    </head>
+    <body onload="brython()">
+        <input id="zone"><button id='test-button'>눌러봐요</button>
+
+    </body>
+</html>
+<script type="text/python">
+	from browser import document
+	from browser.widgets.dialog import InfoDialog
+
+	def echo(ev):
+		InfoDialog("Hello", document['zone'].value)
+
+	document['test-button'].bind('click', echo)
+
+</script>
